@@ -1,0 +1,252 @@
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Bootswatch: Cerulean</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/bootswatch.css">
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootswatch.js"></script>
+<script>
+    function validate(){
+        var email = document.login_form.email.value;
+        var pass = document.login_form.pass.value;
+        if(email==""||pass=="") {
+            alert("email or password is empty !!");
+            return false;
+        }
+            return true;
+
+    }
+    function validateRegisterationForm(){
+        var firstName = document.reg.firstname.value;
+        var lastName = document.reg.lastname.value;
+        var email = document.reg.reg_email__.value;
+        var pass = document.reg.reg_passwd__.value;
+        if(firstName==""||lastName==""||email==""||pass=="")
+        {
+            alert("please fill all the details");
+            return false;
+        }
+        firstName.value = "";
+        lastName.value = "";
+        email.value = "";
+        pass.value = "";
+        return true;
+    }
+</script>
+    <style>
+        form {
+            margin-top: 1em;
+        }
+
+        .navbar-brand {
+            font-size: 35px;
+            line-height: 40px;
+        }
+
+        .navbar-default {
+            background-color: #fff;
+            border-color: #1995dc;
+        }
+
+        .navbar {
+            background-image: -webkit-linear-gradient(#fff, #3B5998 60%, #3B5998);
+            background-image: -o-linear-gradient(#3B5998, #3B5998 60%, #3B5998);
+            background-image: linear-gradient(#3B5998, #3B5998 60%, #3B5998);
+            background-repeat: no-repeat;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff54b4eb', endColorstr='#ff1d9ce5', GradientType=0);
+            border-bottom: 1px solid #178acc;
+            filter: none;
+            -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .html7magic label {
+            color: #fff;
+        }
+
+        .pvl {
+            margin-top: 30px;
+        }
+
+        .mycontainer {
+            padding: 10px;
+            margin-top: 3%;
+        }
+
+        ._58mf ._58mg {
+            border-color: #bdc7d8;
+            -webkit-border-radius: 5px;
+            margin: 0;
+            width: 377px;
+        }
+
+        .uiStickyPlaceholderInput input, .uiStickyPlaceholderInput textarea {
+            background-color: transparent;
+            position: relative;
+        }
+
+        ._58mf ._58mg, ._58mf .uiStickyPlaceholderInput .placeholder {
+            font-size: 18px;
+            padding: 8px 10px;
+        }
+
+        ._58mi {
+            min-width: 194px;
+            padding: 7px 20px;
+            text-align: center;
+        }
+
+        .mvm {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        ._6o {
+            font-size: 19px;
+            line-height: 126%;
+        }
+
+        ._6j {
+            border: 1px solid;
+            -webkit-border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            letter-spacing: 1px;
+            position: relative;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+        }
+    </style>
+</head>
+<body cz-shortcut-listen="true">
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="http://facebook.com/" class="navbar-brand">Mybook</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <form id="login_form" name="login_form" action="/login" method="post" onsubmit="return validate();">
+                    <table cellspacing="0">
+                        <tbody>
+                        <tr>
+                            <td class="html7magic"><label for="email">Email</label></td>
+                            <td class="html7magic"><label for="pass">Password</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="inputtext" name="Email" id="email" value="" tabindex="1">&nbsp;&nbsp;
+                            </td>
+                            <td><input type="password" class="inputtext" name="Password" id="pass" tabindex="2">&nbsp;&nbsp;
+                            </td>
+                            <td><label class="uiButton uiButtonConfirm" id="loginbutton" for="u_0_n"><input value="Log In" tabindex="4" type="submit" id="u_0_n"></label></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="container mycontainer">
+
+    <div class="page-header" id="banner">
+
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h1 class="inlineBlock _3ma _6n _6s _6v" style="padding: 42px 0 24px; font-size: 28px; line-height: 36px"> Connect with friends and the<br>world
+                    around you on Mybook. </h1>
+
+                <div class="mtl pbm">
+                    <div class="_6a _6b mrl" style="text-align: center; width: 55px"><img class="img" src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851565_602269956474188_918638970_n.png" alt="" style="vertical-align: middle">
+                    </div>
+                    <div class="_6a _6b product_desc"><span class="mtl _3ma _6p _6s _6v"> See photos and updates </span><span class="mlm _6q _6t _mf"> from friends in News Feed. </span></div>
+                </div>
+                <div class="mtl pbm">
+                    <div class="_6a _6b mrl" style="text-align: center; width: 55px"><img class="img" src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851585_216271631855613_2121533625_n.png" alt="" style="vertical-align: middle">
+                    </div>
+                    <div class="_6a _6b product_desc"><span class="mtl _3ma _6p _6s _6v"> Share what's new </span><span class="mlm _6q _6t _mf"> in your life on your Timeline. </span></div>
+                </div>
+                <div class="mtl pbm">
+                    <div class="_6a _6b mrl" style="text-align: center; width: 55px"><img class="img" src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2365-6/851558_160351450817973_1678868765_n.png" alt="" style="vertical-align: middle">
+                    </div>
+                    <div class="_6a _6b product_desc"><span class="mtl _3ma _6p _6s _6v"> Find more </span><span class="mlm _6q _6t _mf"> of what you're looking for with Graph Search. </span></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <h1 class="mbs _3ma _6n _6s _6v" style="font-size: 36px">Sign Up</h1>
+
+                <h2 class="mbl _3m9 _6o _6s _mf">It’s free and always will be.</h2>
+
+                <div>
+                    <div>
+                        <noscript>&amp;amp;amp;lt;div id="no_js_box"&amp;amp;amp;gt;&amp;amp;amp;lt;h2&amp;amp;amp;gt;JavaScript is disabled on your
+                            browser.&amp;amp;amp;lt;/h2&amp;amp;amp;gt;&amp;amp;amp;lt;p&amp;amp;amp;gt;Please enable JavaScript on your browser or
+                            upgrade to a JavaScript-capable browser to register for Facebook.&amp;amp;amp;lt;/p&amp;amp;amp;gt;&amp;amp;amp;lt;/div&amp;amp;amp;gt;
+                        </noscript>
+                        <div class="_58mf">
+                            <div id="reg_box" class="registration_redesign">
+                                <form method="post" id="reg" name="reg" action="/register" onsubmit="return validateRegisterationForm();">
+                                    <div id="reg_form_box" class="large_form">
+                                        <div class="clearfix _58mh">
+                                            <div class="mrm lfloat _ohe">
+                                                <div class="_5dbb" id="u_0_0">
+                                                    <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
+                                                        <div class="placeholder" aria-hidden="true">First Name</div>
+                                                        <input type="text" class="inputtext _58mg _5dba" data-type="text" name="firstname" aria-required="1" placeholder="First Name" id=" " aria-label="First Name"></div>
+                                                    <i class="_5dbc img sp_9vUokIDmpP8 sx_116e5b"></i><i class="_5dbd img sp_9vUokIDmpP8 sx_fa2374"></i></div>
+                                            </div>
+                                            <div class="mbm rfloat _ohf">
+                                                <div class="_5dbb" id="">
+                                                    <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
+                                                        <div class="placeholder" aria-hidden="true">Last Name</div>
+                                                        <input type="text" class="inputtext _58mg _5dba" data-type="text" name="lastname" aria-required="1" placeholder="Last Name" id="" aria-label="Last Name"></div>
+                                                    <i class="_5dbc img sp_9vUokIDmpP8 sx_116e5b"></i><i class="_5dbd img sp_9vUokIDmpP8 sx_fa2374"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="mbm">
+                                            <div class="_5dbb" id="u_0_4">
+                                                <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
+                                                    <div class="placeholder" aria-hidden="true">Your Email</div>
+                                                    <input type="text" class="inputtext _58mg _5dba" data-type="text" name="reg_email__" aria-required="1" placeholder="Your Email" id="u_0_5" aria-label="Your Email"></div>
+                                                <i class="_5dbc img sp_9vUokIDmpP8 sx_116e5b"></i><i class="_5dbd img sp_9vUokIDmpP8 sx_fa2374"></i></div>
+                                        </div>
+                                        <div class="mbm" id="u_0_6">
+                                            <div class="_5dbb" id="u_0_7"><i class="_5dbc img sp_9vUokIDmpP8 sx_116e5b"></i><i class="_5dbd img sp_9vUokIDmpP8 sx_fa2374"></i></div>
+                                        </div>
+                                        <div class="mbm">
+                                            <div class="_5dbb" id="u_0_9">
+                                                <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
+                                                    <div class="placeholder" aria-hidden="true">New Password</div>
+                                                    <input type="password" class="inputtext _58mg _5dba" data-type="text" name="reg_passwd__" aria-required="1" placeholder="New Password" id="u_0_a" aria-label="New Password"></div>
+                                                <i class="_5dbc img sp_9vUokIDmpP8 sx_116e5b"></i><i class="_5dbd img sp_9vUokIDmpP8 sx_fa2374"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <button type="submit" class="btn-success _6j mvm _6wk _6wl _58mi _3ma _6o _6v" name="websubmit" id="u_0_i">Sign Up
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body></html>
