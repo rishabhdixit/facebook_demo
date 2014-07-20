@@ -1,3 +1,4 @@
+var fs = require('fs');
 var mongoose = require('mongoose');
 var async = require('async');
 var URIString = "mongodb://localhost/facebookdb";
@@ -9,28 +10,18 @@ var userSchema = new mongoose.Schema({
     LastName: {type: String},
     Email: {type: String},
     Password: {type: String},
-    Img: {type: String}
-});
-
-var adminSchema = new mongoose.Schema({
-    FirstName: {type: String},
-    LastName: {type: String},
-    Email: {type: String},
-    Password: {type: String},
-    Img: {type: String}
+    Status: {type: String}
 });
 
 
 var userModel = db.model('User', userSchema);
-var adminModel = db.model('Admin', adminSchema);
-
 
 var user = new userModel({
     FirstName: 'rishabh',
     LastName: 'dixit',
     Email: 'rishabh@gmail.com',
     Password: 'abcde',
-    Img: 'http://localhost:7777/images/Lionel-Messi-Lattest-HD-Wallpaper-2014.jpg'
+    Status:'this is default status'
 });
 
 
@@ -39,7 +30,7 @@ var user1 = new userModel({
     LastName: 'dixit',
     Email: 'shivam@gmail.com',
     Password: 'abcde',
-    Img: 'http://localhost:7777/images/leaveimg.jpg'
+    Status:'this is default status'
 });
 
 
@@ -79,7 +70,7 @@ exports.getUserList = function (req, res) {
     });
 }
 
-exports.getUser = function (req, res) {
+exports.getUserImage = function (req, res) {
     userModel.findOne({Email: req.params.id}).exec(function (err, data) {
         if (err) {
             res.send("Error occurred while fetching the user record: " + err);
@@ -92,6 +83,9 @@ exports.getUser = function (req, res) {
 
 exports.checkUser = function (req, res) {
 
+
+
+
     userModel.findOne({Email: req.body.Email}).exec(function (err, data) {
         if (err) {
             console.log("Error occurred while fetching the user record :" + err)
@@ -99,15 +93,36 @@ exports.checkUser = function (req, res) {
         }
         else {
             if (req.body.Password === data.Password) {
-                //res.writeHead(200, { 'Set-Cookie': 'myCookie='+data.Email, 'Content-Type': 'text/plain' });
-                if (!req.session.user) {
-                    //req.session.regenerate(function () {
-                        req.session.user = "admin";
-                    //});
-                }
-                res.cookie('user_id', data.Email);
-                res.redirect('/profile');
 
+                if (!req.session.user) {
+
+                        req.session.user = data._id;
+
+                }
+                var path = "./public/images/"+req.session.user+".jpg";
+                if(fs.existsSync(path)){
+                        res.cookie('user_id',data.Email);
+                        res.redirect('/profile');
+                }
+                else {
+
+                    var tmp_path = "./public/images/default.jpg";
+
+                    var target_path = './public/images/' + req.session.user + '.jpg';
+
+                    fs.readFile(tmp_path, function (err, data) {
+
+                        fs.writeFile(target_path, data, function (err) {
+                            if(err){
+
+                                res.send(err);
+                            }
+
+                        });
+                    });
+                    res.cookie('user_id', data.Email);
+                    res.redirect('/profile');
+                }
             }
             else
                 res.redirect('/login');
@@ -132,22 +147,32 @@ exports.registerUser = function (req, res) {
         LastName: req.body.lastname,
         Email: req.body.reg_email__,
         Password: req.body.reg_passwd__,
-        Img: 'http://localhost:7777/images/default.jpg'
+        Status:'this is default status'
     });
+
 
     user.save(function (err) {
         if (err) {
-            res.redirect('../pages/index.html');
+            res.redirect('/login');
         }
         else {
 
-            res.redirect('../pages/index.html');
+            res.redirect('/login');
         }
     });
 
 
 }
 
+exports.updateStatus = function (req,res) {
+    userModel.update({_id:req.session.user},{Status:req.params.id}).exec(function(err,result){
+        if(err){
+            res.send("Error occurred while updating the record: "+err);
+        }else{
+            res.send("Record updated: "+result);
+        }
+    });
+}
 
 exports.postUser = function (req, res) {
 

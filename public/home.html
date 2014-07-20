@@ -5,7 +5,7 @@
     <div class="col-sm-5">
 
         <div class="panel panel-default">
-            <div class="panel-thumbnail"><img id ="messi" src={{image}} class="img-responsive"></div>
+            <div class="panel-thumbnail"><img src={{image}} class="img-responsive"></div>
             <div class="panel-body">
                 <!--<p>
                     <img src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s28" width="28px" height="28px">
@@ -13,6 +13,12 @@
 
 
                 <p class="lead">Profile Pic</p>
+                <div class="btn-toolbar bs-component" role="toolbar" style="margin: 0;">
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                    <div class="btn-group"><input type="file" name="thumbnail"/></div>
+                    <div class="btn-group"><input type="submit" value="upload pic"/></div>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -41,7 +47,7 @@
         <div class="panel panel-default">
             <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>More Templates</h4></div>
             <div class="panel-body">
-                <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Free @Bootply</a>
+                <img src="{{image}}" class="img-circle pull-right"> <a href="#">Free @Bootply</a>
                 <div class="clearfix"></div>
                 There a load of new free Bootstrap 3 ready templates at Bootply. All of these templates are free and don't require extensive customization to the Bootstrap baseline.
                 <hr>
@@ -67,7 +73,7 @@
         <div class="panel panel-default">
             <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Status</h4></div>
             <div class="panel-body">
-                <p><img src="//placehold.it/150x150" class="img-circle pull-right"> <span ng-model="viewStatus" class="ng-binding ng-pristine ng-valid">{{viewStatus}}</span></p>
+                <p><img src="{{image}}" class="img-circle pull-right"> <span ng-model="viewStatus" class="ng-binding ng-pristine ng-valid">{{viewStatus}}</span></p>
 
             </div>
         </div>
@@ -75,7 +81,7 @@
         <div class="panel panel-default">
             <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Stackoverflow</h4></div>
             <div class="panel-body">
-                <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Keyword: Bootstrap</a>
+                <img src="{{image}}" class="img-circle pull-right"> <a href="#">Keyword: Bootstrap</a>
                 <div class="clearfix"></div>
                 <hr>
 
